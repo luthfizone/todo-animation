@@ -26,10 +26,7 @@ const addTask = (newTask) => {
  * index from TodoContent component
  */
 const removeTask = (index) => {
-  if (taskList.value[index] === tasks[index]) {
-    taskList.value.splice(index, 1);
-  }
-  return;
+  taskList.value.splice(index, 1);
 };
 </script>
 
