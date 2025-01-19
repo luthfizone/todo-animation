@@ -2,7 +2,6 @@
 const props = defineProps({
   message: String,
   style: Object,
-  inputUser: String,
 });
 </script>
 <template>
