@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import Header from "@/components/Header.vue";
+import InputUser from "@/components/InputUser.vue";
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Header />
+    <InputUser />
   </main>
 </template>
