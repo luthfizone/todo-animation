@@ -2,9 +2,9 @@
 const props = defineProps({
   message: String,
   style: Object,
+  inputUser: String,
 });
 </script>
-
 <template>
   <button class="btn" :style="props.style">
     {{ props.message }}

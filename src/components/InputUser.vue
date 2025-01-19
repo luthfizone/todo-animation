@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+
 import Button from "@/components/Button.vue";
 
 // Add button
@@ -6,6 +8,21 @@ const messageAdd = "add";
 const styleAddButton = {
   backgroundColor: "#41e457",
   color: "#fff",
+};
+
+// Emit / send data to parent component
+const inputUser = ref("");
+const emit = defineEmits(["addTask"]);
+
+/**
+ * This function will sending data with
+ * parameter from InputUser ref
+ * and this function will empty the ref again
+ * after the function it called
+ */
+const addTask = () => {
+  emit("addTask", inputUser.value);
+  inputUser.value = "";
 };
 </script>
 
@@ -17,8 +34,14 @@ const styleAddButton = {
       id="todo"
       class="input-text"
       placeholder="Add todo.."
+      v-model.lazy="inputUser"
     />
-    <Button :message="messageAdd" :style="styleAddButton" />
+    <Button
+      :message="messageAdd"
+      :style="styleAddButton"
+      :inputUser="inputUser"
+      @click="addTask"
+    />
   </div>
 </template>
 

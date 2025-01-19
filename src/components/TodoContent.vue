@@ -1,5 +1,7 @@
 <script setup>
-const { tasks } = defineProps(["tasks"]);
+const { tasks } = defineProps({
+  tasks: Array,
+});
 </script>
 
 <template>
