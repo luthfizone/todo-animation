@@ -19,6 +19,18 @@ const props = defineProps({
   text-transform: uppercase;
   font-weight: bolder;
   align-self: center;
-  padding: 10px 15px;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    padding: 10px 15px;
+  }
 }
 </style>
