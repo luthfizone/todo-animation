@@ -1,21 +1,23 @@
-<script setup></script>
+<script setup>
+const { tasks } = defineProps(["tasks"]);
+</script>
 
 <template>
   <div class="card-list">
-    <div>Task 1</div>
-    <div>Task 2</div>
-    <div>Task 3</div>
+    <div class="card" v-for="(task, index) in tasks" :key="index">
+      {{ task }}
+    </div>
   </div>
 </template>
 
 <style scoped>
 .card-list {
   margin-top: 1.5rem;
-  width: 50%;
+  width: 40%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.card-list div {
+.card {
   margin-top: 1rem;
   padding: 5% 10%;
   text-align: center;
