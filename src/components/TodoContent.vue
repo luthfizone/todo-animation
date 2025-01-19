@@ -23,6 +23,8 @@ const { tasks } = defineProps({
   margin-top: 1.5rem;
   width: 40%;
   font-family: Arial, Helvetica, sans-serif;
+  max-height: 500px;
+  overflow: auto;
 }
 
 .card {
