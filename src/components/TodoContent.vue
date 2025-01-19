@@ -1,12 +1,18 @@
 <script setup>
 const { tasks } = defineProps({
   tasks: Array,
+  removeTask: Function,
 });
 </script>
 
 <template>
   <div class="card-list">
-    <div class="card" v-for="(task, index) in tasks" :key="index">
+    <div
+      class="card"
+      v-for="(task, index) in tasks"
+      :key="index"
+      @click="removeTask(index)"
+    >
       {{ task }}
     </div>
   </div>

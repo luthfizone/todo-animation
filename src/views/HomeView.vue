@@ -19,12 +19,24 @@ const taskList = ref([...tasks]);
 const addTask = (newTask) => {
   taskList.value.push(newTask);
 };
+
+/**
+ * This function for remove data
+ * if the taskList have same index with
+ * index from TodoContent component
+ */
+const removeTask = (index) => {
+  if (taskList.value[index] === tasks[index]) {
+    taskList.value.splice(index, 1);
+  }
+  return;
+};
 </script>
 
 <template>
   <main>
     <Header />
     <InputUser @addTask="addTask" />
-    <TodoContent :tasks="taskList" />
+    <TodoContent :tasks="taskList" :removeTask="removeTask" />
   </main>
 </template>
